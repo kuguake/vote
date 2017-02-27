@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>发现 &middot; 钢为网红人气大比拼</title>
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<link href="css/artdialog.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js" type="text/javascript"></script>
+</head>
+
+<body class="bodyvote">
+<div class="main">
+  <div class="vote-click">
+    <ul>
+      <li class="vote-photo photo1"></li>
+      <li class="vote-name">长沙 &middot; 龚美玲</li>
+      <li class="vote-btn"><a href="#" class="hand"></a></li>
+    </ul>
+    <ul>
+      <li class="vote-photo photo2"></li>
+      <li class="vote-name">杭州 &middot; 黄金良</li>
+      <li class="vote-btn"><a href="#"></a></li>
+    </ul>
+    <ul>
+      <li class="vote-photo photo3"></li>
+      <li class="vote-name">杭州 &middot; 徐 彪</li>
+      <li class="vote-btn"><a href="#"></a></li>
+    </ul>
+    <ul>
+      <li class="vote-photo photo4"></li>
+      <li class="vote-name">无锡 &middot; 吴海清</li>
+      <li class="vote-btn"><a href="#"></a></li>
+    </ul>
+    <ul>
+      <li class="vote-photo photo5"></li>
+      <li class="vote-name">上海 &middot; 仇高平</li>
+      <li class="vote-btn"><a href="#"></a></li>
+    </ul>
+    <ul>
+      <li class="vote-photo photo6"></li>
+      <li class="vote-name">武汉 &middot; 柳惠子</li>
+      <li class="vote-btn"><a href="#"></a></li>
+    </ul>
+    <ul>
+      <li class="vote-photo photo7"></li>
+      <li class="vote-name">武汉 &middot; 候 庭</li>
+      <li class="vote-btn"><a href="#"></a></li>
+    </ul>
+    <ul>
+      <li class="vote-photo photo8"></li>
+      <li class="vote-name">天津 &middot; 王瑞红</li>
+      <li class="vote-btn"><a href="#"></a></li>
+    </ul>
+    <ul>
+      <li class="vote-photo photo9"></li>
+      <li class="vote-name">成都 &middot; 钟富朋</li>
+      <li class="vote-btn"><a href="#"></a></li>
+    </ul>
+  </div>
+</div>
+<script src="js/artdialog.min.js" type="text/javascript"></script> 
+<script src="js/global.js" type="text/javascript"></script> 
+<script type="text/javascript">    
+     	$(function(){            
+           $(".vote-btn").click(function(){
+			   var ele = "<div><img src='images/artdialog1.png' width='470' height='454' /><a href='javascript:;' class='btn_ok' ></a></div> />"
+           		cbms.getDialog(false,ele);
+
+           });
+           
+	 		$(document).on("click",".btn_ok",function(){
+				cbms.closeDialog();
+			})
+           
+
+    	})
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>发现 &middot; 钢为网红人气大比拼</title>
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body class="bodyindex">
+<div class="main">
+<div class="votes red1">
+<div divindex="0" w="0" style="width:0px;" class="photo iphoto1"></div>
+<div class="name">长沙 &middot; 龚美玲<br /><span><label numvote>11</label>票</span></div>
+</div>
+
+<div class="votes red2">
+<div divindex="1" w="0" style="width:0px;" class="photo iphoto2"></div>
+<div class="name">杭州 &middot; 黄金良<br /><span><label numvote>21</label>票</span></div>
+</div>
+
+<div class="votes red3">
+<div divindex="2" w="50" style="width:0px;" class="photo"></div>
+<div class="name">杭州 &middot; 徐 彪<br /><span><label numvote>43</label>票</span></div>
+</div>
+
+<div class="votes red4">
+<div divindex="3" w="19" style="width:0px;" class="photo"></div>
+<div class="name">无锡 &middot; 吴海清<br /><span><label numvote>54</label>票</span></div>
+</div>
+
+<div class="votes red5">
+<div divindex="4" w="33" style="width:0px;"  class="photo"></div>
+<div class="name">上海 &middot; 仇高平<br /><span><label numvote>5</label>票</span></div>
+</div>
+
+<div class="votes red6">
+<div divindex="5" w="42" style="width:0px;"  class="photo"></div>
+<div class="name">武汉 &middot; 柳惠子<br /><span><label numvote>26</label>票</span></div>
+</div>
+
+<div class="votes red7">
+<div divindex="6" w="60" style="width:0px;"  class="photo"></div>
+<div class="name">武汉 &middot; 候 庭<br /><span><label numvote>17</label>票</span></div>
+</div>
+
+<div class="votes red8">
+<div divindex="7" w="23" style="width:0px;"  class="photo"></div>
+<div class="name">天津 &middot; 王瑞红<br /><span><label numvote>38</label>票</span></div>
+</div>
+
+<div class="votes red9">
+<div divindex="8" w="10" style="width:0px;"  class="photo"></div>
+<div class="name">成都 &middot; 钟富朋<br /><span><label numvote>19</label>票</span></div>
+</div>
+
+<div class="btn-index"><div class="btn_vote"><a href="votepage.html"></a></div><div class="btn_return"><a href="votepage.html"></a></div></div>
+
+</div>
+<script language="javascript">
+function animate(){
+	var max="barred";
+	var middle="baryellow";
+	var min="barblue";	
+	
+	var maxValue=0;
+	var minValue=0;
+	
+	var maxIndex=0;
+	var minIndex=0;
+	
+	$(".charts").each(function(i,item){
+		var a=parseInt($(item).attr("w"));
+	
+		if(i==0){
+			minValue=a;
+			minIndex=i;
+		}
+	
+		if(a>maxValue){
+			maxValue=a;
+			maxIndex=i;
+		}else if(a<minValue){
+			minValue=a;
+			minIndex=i;
+		}
+	
+	});
+	
+	var maxvote=0;
+	$(".votes label[numvote]").each(function(i,item){
+		if(parseInt($(item).text())>maxvote){			
+			maxvote=parseInt($(item).text());	
+		}		
+	});
+	maxvote+=maxvote*0.4;
+	
+	$(".photo").each(function(i,item){
+		var addStyle="";
+		var divindex=parseInt($(item).attr("divindex"));
+		if(divindex==maxIndex){
+			addStyle=max;
+		}else if(divindex==minIndex){
+			addStyle=min;
+		}else{
+			addStyle=middle;
+		}
+		
+		var curvote=$(item).siblings().find("label[numvote]").text();
+		var percent=curvote*100/maxvote;
+		$(item).attr("w",percent);
+		
+		$(item).addClass(addStyle);
+		var a=$(item).attr("w");
+		$(item).animate({
+			width: a+"%"
+		},1000);
+	});	
+	
+	
+}
+animate();
+</script>
+</body>
+</html>
